@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
+import logo from './public/logo.svg';
 import styles from './App.module.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Welcome from './components/Welcome/Welcome';
 import Hello from './components/Hello/Hello';
+import About from './pages/About/About';
 
 function App(): JSX.Element {
   const [count, setCount] = useState<number>(0);
@@ -43,7 +44,7 @@ function App(): JSX.Element {
           </p>
           <Routes>
             <Route path="/" element={<Hello>test</Hello>} />
-            <Route path="/about" />
+            <Route path="/about" element={<About />} />
           </Routes>
         </header>
       </div>

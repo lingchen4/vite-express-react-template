@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
-    "client:dev": "vite",
+    "client:dev": "vite --host",
     "server:dev": "ts-node-dev --project tsconfig.server.json src/server",
     "server:build": "tsc --project tsconfig.server.json",
     "client:build": "vite build",
-    "build": "npm run server:build && npm run client:build && npm run storybook:build",
+    "build": "npm run server:build && npm run client:build",
     "serve": "vite preview",
     "prepare": "husky install",
     "test": "tsc && prettier --check . && eslint . && stylelint \"**/*.css\"",
-    "storybook": "start-storybook -p 6006",
     "start": "node dist/server.js"
   },
   "devDependencies": {
