@@ -5,16 +5,16 @@ dotenv.config();
 
 import { defineConfig } from 'vite';
 
-const { ServerPORT = 3001, AppPort = 3000 } = process.env;
+const { serverPORT = 3001, appPort = 3000 } = process.env;
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: AppPort,
+    port: appPort,
     proxy: {
       '/api': {
-        target: `http://localhost:${ServerPORT}`,
+        target: `http://localhost:${serverPORT}`,
         changeOrigin: true,
       },
     },

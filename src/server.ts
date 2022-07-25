@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const { ServerPORT = 3001 } = process.env;
+const { serverPORT = 3001 } = process.env;
 const app = express();
 
 // Middleware that parses json and looks at requests where the Content-Type header matches the type option.
@@ -22,6 +22,6 @@ app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, 'app/index.html'));
 });
 
-app.listen(ServerPORT, () => {
-  console.log(`Server listening at http://localhost:${ServerPORT}`);
+app.listen(serverPORT, () => {
+  console.log(`Server listening at http://localhost:${serverPORT}`);
 });
